@@ -12,17 +12,16 @@ var express       = require('express'),
 var app = express();
 
 // PORT & LISTENER
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
 // MIDDLEWARE
-app
-  .use(logger('dev')),
-  .use(cookieParser()),
-  .use(bodyParser.urlencoded({ extended: true })),
-  .use(bodyParser.json()),
-  .use(express.static('public'));
+app.use(logger('dev'));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
 
 // MONGO
 mongoose.connect('mongodb://localhost/jmnyGoals')
@@ -34,5 +33,9 @@ mongoose.connect('mongodb://localhost/jmnyGoals')
 // SEED
 
 // ROUTES////////////////////////////////////////
+app.get('/test', function(req, res){
+  res.send('This is a test');
+});
+
 
 // TEMP STUFF && GARBAGE/////////////////////////

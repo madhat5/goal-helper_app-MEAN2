@@ -154,7 +154,7 @@ App Build Steps:
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
 
-- app port & listener --o--
+- app port & listener --x--
 	- server.js
 		- var port = process.env.PORT || 3000;
 		- app.listen(port);
