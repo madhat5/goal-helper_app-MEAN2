@@ -149,7 +149,6 @@ App Build Steps:
 			- app.use(cookieParser());
             - app.use(bodyParser.urlencoded({ extended: true}));
             - app.use(bodyParser.json());
-            - app.use(express.static('public'));
             - (ADD SCRIPTS, if needed)
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
@@ -168,7 +167,7 @@ App Build Steps:
     - add:
         - node_modules
 
-- mkdir public --o--
+- mkdir public --x--
 	- server.js
 		- app.use(express.static('public'));
 	- touch public/index.html
