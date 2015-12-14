@@ -132,15 +132,12 @@ App Build Steps:
 - npm init --x--
 	-'enter' through all the prompts
 
-- npm init --o--
-	-'enter' through all the prompts
-
-- packages setup --o--
+- packages setup --x--
 	- npm install --save express morgan mongoose cookie-parser body-parser md5
 	- app.js
 		- dependecies
 			- var express = require('express');
-			- morgan = require('morgan')
+			- logger = require('morgan')
 			- mongoose = require('mongoose')
 			- cookieParser = require('cookie-parser')
             - bodyParser = require('body-parser')
@@ -148,10 +145,12 @@ App Build Steps:
 		- express
 			- var app = express();
 		- middleware
-			- app.use(morgan('dev'));
+			- app.use(logger('dev'));
 			- app.use(cookieParser());
             - app.use(bodyParser.urlencoded({ extended: true}));
-            - (ADD SCRIPT)
+            - app.use(bodyParser.json());
+            - app.use(express.static('public'));
+            - (ADD SCRIPTS, if needed)
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
 
@@ -159,8 +158,7 @@ App Build Steps:
 	- server.js
 		- var port = process.env.PORT || 3000;
 		- app.listen(port);
-		- console.log('Silence please...');
-		- setTimeout(function(){console.log('Curtains up...' + '\n' + 'Server started on ' + port)}, 1000);
+		- console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
 - test connection --o--
     - setup basic route
