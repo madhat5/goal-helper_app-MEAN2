@@ -149,7 +149,6 @@ App Build Steps:
 			- app.use(cookieParser());
             - app.use(bodyParser.urlencoded({ extended: true}));
             - app.use(bodyParser.json());
-            - app.use(express.static('public'));
             - (ADD SCRIPTS, if needed)
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
@@ -160,10 +159,16 @@ App Build Steps:
 		- app.listen(port);
 		- console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
-- test connection --o--
-    - setup basic route
+- test connection --x--
+    - setup basic test route
+    - - launch server (nodemon)
 
-- mkdir public --o--
+- safety --x--
+    - touch .gitignore 
+    - add:
+        - node_modules
+
+- mkdir public --x--
 	- server.js
 		- app.use(express.static('public'));
 	- touch public/index.html
@@ -171,98 +176,34 @@ App Build Steps:
 	- touch public/style.css
 
 - test connection --o--
-    - setup basic route
-    - setup basic index.html/app.js
+    - setup basic test route
+    - setup basic test index.html/app.js
     - launch server (nodemon)
 
-- >>>>>>>>>>>>>>>>>> UPDATE 
-
-
-- models build --ox--
+- models build --o--
     - mkdir models
     	- touch models/user.js
     - server.js
     	- var User = require('./models/user.js');
+    	- var Goal = require('./models/goal');
     - user.js
 		- var mongoose = require('mongoose'),
-		- Schema = mongoose.Schema,
-		- passportLocalMongoose = require('passport-local-mongoose');
-	- var User = new Schema({ ... });
-	- User.plugin(passportLocalMongoose);
-	- var userMongoose = mongoose.model('users', User);
-	- module.exports = userMongoose;
-
-- routes --x--
-	- touch routes/api.js
-	- build
-		- registration
-		- login
-		- logout
-	- test
-
-- mkdir client --ox--
-	- touch index.html
-	- touch main.js
-    - touch controller.js
-    - touch services.js
-	- mkdir partials
-		- touch home.html
-    - script build
-
-- models build --ox--
-    - server.js
-    	- var Goal = require('./models/goal');
-    - post.js
+		- var userSchema = new mongoose.Schema({ ... });
+		- var user = mongoose.model('User', userSchema);
+		- module.exports = User
+    - goal.js
         - var mongoose = require('mongoose');
-        - var postSchema = new mongoose.Schema({ ... });
-        - var Post = mongoose.model('Post', postSchema);
-        - module.exports = Post;
+        - var goalSchema = new mongoose.Schema({ ... });
+        - var Goal = mongoose.model('Goal', postSchema);
+        - module.exports = Goal;
 
 - CDN --o--
-	- js-cookie URL 
-    - Angular
+	- js-cookie
+		- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+    - angular
+    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 - Story build --o--
-    - 
-
-- CSS --o--
-	- bootstrap
-
-- safety
-    - touch .gitignore 
-        - add:
-            - node_modules
-
-- Debug:
-	- check ALL syntax in ALL files
-
-- Remaining:
-	- 
-
----
----
-
-- test connection --x--
-    - setup basic route
-    - setup basic index.html/app.js
-    - launch server (nodemon/mongod) 
-
-- models build --x--
-    - mkdir models
-    - touch models/post.js
-    - server.js
-        - var Post = require('./models/post');
-    - post.js
-        - var mongoose = require('mongoose');
-        - var postSchema = new mongoose.Schema({ ... });
-        - var Post = mongoose.model('Post', postSchema);
-        - module.exports = Post;
-
-- CDN --x--
-	- js-cookie URL 
-    - Angular
-
-- Story build --ox--
     - server.js
     - public/index.html
     - public/app.js
@@ -270,9 +211,10 @@ App Build Steps:
 - CSS --o--
 	- bootstrap
 
-
 - Remaining:
-    - debug angular
+	- a whole bunch
+    - story build
+    - debug
     - fonts/bootstrap/draggable posts
     - heroku
 ---
