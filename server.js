@@ -33,8 +33,13 @@ mongoose.connect('mongodb://localhost/jmnyGoals')
 // SEED
 
 // ROUTES////////////////////////////////////////
-app.get('/test', function(req, res){
-  res.send('This is a test');
+// TEST
+// app.get('/test', function(req, res){
+//   res.send('This is a test');
+// });
+
+app.get('/', function(req, res){
+
 });
 
 

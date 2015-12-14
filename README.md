@@ -160,7 +160,8 @@ App Build Steps:
 		- console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
 - test connection --x--
-    - setup basic route
+    - setup basic test route
+    - - launch server (nodemon)
 
 - safety --x--
     - touch .gitignore 
@@ -175,8 +176,8 @@ App Build Steps:
 	- touch public/style.css
 
 - test connection --o--
-    - setup basic route
-    - setup basic index.html/app.js
+    - setup basic test route
+    - setup basic test index.html/app.js
     - launch server (nodemon)
 
 - models build --o--
@@ -197,8 +198,10 @@ App Build Steps:
         - module.exports = Goal;
 
 - CDN --o--
-	- js-cookie URL 
-    - Angular
+	- js-cookie
+		- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+    - angular
+    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 - Story build --o--
     - server.js
