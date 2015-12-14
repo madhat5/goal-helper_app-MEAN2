@@ -127,9 +127,9 @@ User story: (UPDATE)
 ---
 App Build Steps:
 
-- touch server.js --o--
+- touch server.js --x--
 
-- npm init --o--
+- npm init --x--
 	-'enter' through all the prompts
 
 - npm init --o--
