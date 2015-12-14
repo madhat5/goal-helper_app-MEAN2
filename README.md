@@ -127,15 +127,15 @@ User story: (UPDATE)
 ---
 App Build Steps:
 
-- touch server.js --O--
+- touch server.js --o--
 
-- npm init --O--
+- npm init --o--
 	-'enter' through all the prompts
 
-- npm init --O--
+- npm init --o--
 	-'enter' through all the prompts
 
-- packages setup --O--
+- packages setup --o--
 	- npm install --save express morgan mongoose cookie-parser body-parser md5
 	- app.js
 		- dependecies
@@ -155,24 +155,24 @@ App Build Steps:
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
 
-- app port & listener --O--
+- app port & listener --o--
 	- server.js
 		- var port = process.env.PORT || 3000;
 		- app.listen(port);
 		- console.log('Silence please...');
 		- setTimeout(function(){console.log('Curtains up...' + '\n' + 'Server started on ' + port)}, 1000);
 
-- test connection --O--
+- test connection --o--
     - setup basic route
 
-- mkdir public --O--
+- mkdir public --o--
 	- server.js
 		- app.use(express.static('public'));
 	- touch public/index.html
 	- touch public/app.js
 	- touch public/style.css
 
-- test connection --O--
+- test connection --o--
     - setup basic route
     - setup basic index.html/app.js
     - launch server (nodemon)
