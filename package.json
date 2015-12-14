@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/madhat5/goal-helper_app-MEAN2/issues"
   },
-  "homepage": "https://github.com/madhat5/goal-helper_app-MEAN2#readme"
+  "homepage": "https://github.com/madhat5/goal-helper_app-MEAN2#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "md5": "^2.0.0",
+    "mongoose": "^4.3.1",
+    "morgan": "^1.6.1"
+  }
 }
