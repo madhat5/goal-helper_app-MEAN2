@@ -228,6 +228,7 @@ App Build Steps:
 	- score tracker
 	- color change based on step status
 	- navbar with goals
+	- show navbar on hover
 
 - Remaining:
 	- client side 

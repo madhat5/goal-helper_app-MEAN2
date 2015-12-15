@@ -1,6 +1,13 @@
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.nav-item {
+  display: inline;
+  padding-left: 10px;
 }
+
+.navbar {
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  border-style: solid;
+}
+
 
