@@ -1,6 +1,6 @@
 .nav-item {
   display: inline;
-  /*padding-left: 10px;*/
+  padding-left: 10px;
 }
 
 .navbar {
@@ -14,8 +14,12 @@
   padding-left: 75%;
 }
 
-.welcome-banner {
+.mini-banner{
+  text-align: center;
+}
 
+.welcome-login {
+  margin: 5% 50%;
 }
 
 .tagline {
