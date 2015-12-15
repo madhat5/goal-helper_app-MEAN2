@@ -3,45 +3,52 @@
 <head>
   <title>Jmny</title>
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
 <ul class='navbar'>
-  <li class='nav-item'>Tutorial</li>
-  <li class='nav-item'>Register</li>
-  <li class='nav-item'>Login</li>
+  <div class='navbar-div'>
+    <li class='nav-item'>Tutorial</li>
+    <li class='nav-item'>Register</li>
+    <li class='nav-item'>Login</li>
+  </div>
 </ul>
 
-<div class='welcome-banner'>
+<div class='welcome-banner' class='row'>
+  <div class='col-lg-4 col-lg-offset-4'>
 
-  <h1>Welcome to Jmny!</h1>
-  <h3>Where we help #users(-db# of users) achieve #goals(db total users.goals)</h3>
+    <h1>Welcome to Jmny!</h1>
+    <h4 class='tagline'>Where we help #users(-db# of users) achieve #goals(db total users.goals)</h4>
 
-  <button class='welcome-login'>Login</button>
+    <button class='welcome-login'>Login</button>
 
-  <div class='welcome-info'>
-    <p>
-    "When it is obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps.""
-        - Confucius
-    </p>
-    <p>
-    “If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them.”
-        - Henry David Thoreau
-    </p>
-    <p>
-    “A goal is not always meant to be reached, it often serves simply as something to aim at.""
-        - Bruce Lee
-    </p>
-    <p>
-    “It is good to have an end to journey toward; but it is the journey that matters, in the end.”
-        - Ernest Hemingway
-    </p>
-  </div> <!-- end of welcome-banner-->
+    <div class='welcome-info'>
+      <p>
+      "When it is obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps.""
+          - Confucius
+      </p>
+      <p>
+      “If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them.”
+          - Henry David Thoreau
+      </p>
+      <p>
+      “A goal is not always meant to be reached, it often serves simply as something to aim at.""
+          - Bruce Lee
+      </p>
+      <p>
+      “It is good to have an end to journey toward; but it is the journey that matters, in the end.”
+          - Ernest Hemingway
+      </p>
+    </div>
 
-</div>
+  </div>
+</div> <!-- end of welcome-banner-->
 
 <div class='register-form'>
 
