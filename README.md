@@ -244,6 +244,7 @@ App Build Steps:
 	- goal display:
 		- goal + next step
 		- add div lines around goal per number of steps
+	- rotate through quotes (hide/show each)
 
 - Remaining:
 	- client side 

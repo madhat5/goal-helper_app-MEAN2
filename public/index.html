@@ -34,7 +34,7 @@
           <div class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
-              <h4 class='tagline'>Where we help #users(-db# of users) achieve #goals(db total users.goals)</h4>
+              <h4 class='tagline'>Where we help # of users achieve #{{goalController.totalGoals}}</h4>
             </div>
             <button id='welcome-login' class="btn btn-default" style='margin: 0 50%'>Login</button>
             <br>
@@ -82,11 +82,15 @@
 
     <div class='goal-holder'>
       <h3>Goal (angular) </h3>
-      <p>Goal.step (angular)</p>
+      <p>Goal.Step (angular)</p>
       <br>
 
       <button id='goal-create' class="btn btn-default">Create a Goal</button>
       <button id='goal-view' class="btn btn-default">View my Goal</button>
+      <br>
+      <br>
+      <button id='step-create' class="btn btn-default">Create a step for your Goal</button>
+      <button id='goal-view' class="btn btn-default">View my Goal steps</button>
     </div> <!-- end of goal-holder -->
 
   </div> <!-- end of ngmygoals -->
