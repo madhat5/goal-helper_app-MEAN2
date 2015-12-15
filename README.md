@@ -175,7 +175,13 @@ App Build Steps:
 	- touch public/app.js
 	- touch public/style.css
 
-- test connection --o--
+- user auth build --ox--
+	- server.js
+		- create register
+		- create login/user info
+		- logout?
+
+- test connection --ox--
     - setup basic test route
     - setup basic test index.html/app.js
     - launch server (nodemon)
@@ -251,15 +257,6 @@ Reference
 ---
 Comments/Notes:
 
-- explain use of angular AND jquery in passport login/app setup
-	- cf client/main.js
-	- use a bunch of console.logs
-
-- read about ng-disabled
-
-- #!/usr/bin/env node
-    - http://stackoverflow.com/questions/15061001/what-does-bin-env-mean-at-the-top-of-a-node-js-script
-
 - 
 
 ---
@@ -267,7 +264,7 @@ Comments/Notes:
 Shoutouts:
 
 - Kyle (dragable div)
-- Katie Z (modal)
+- Katie Z (user-auth; bootstrap modal)
 - Robbie (dynamic searches)
 
 
