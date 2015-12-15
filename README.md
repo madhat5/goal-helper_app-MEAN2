@@ -209,7 +209,7 @@ App Build Steps:
         - var Goal = mongoose.model('Goal', postSchema);
         - module.exports = Goal;
 
-- Story build --o--
+- Story build --ox--
     - server.js
     	- goal/task CRUD
     - public/index.html
