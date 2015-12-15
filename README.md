@@ -175,48 +175,74 @@ App Build Steps:
 	- touch public/app.js
 	- touch public/style.css
 
-- test connection --o--
+- test connection --x--
     - setup basic test route
     - setup basic test index.html/app.js
     - launch server (nodemon)
 
-- models build --o--
+- models build --x--
     - mkdir models
     	- touch models/user.js
     - server.js
     	- var User = require('./models/user.js');
-    	- var Goal = require('./models/goal');
     - user.js
 		- var mongoose = require('mongoose'),
 		- var userSchema = new mongoose.Schema({ ... });
-		- var user = mongoose.model('User', userSchema);
+		- var User = mongoose.model('User', userSchema);
 		- module.exports = User
+
+- user auth build --ox--
+	- server.js
+		- create register
+		- create login/user info
+		- logout?
+	- CURL test
+		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
+		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
+
+- models build --o--
+    - server.js
+		- var Goal = require('./models/goal');
     - goal.js
         - var mongoose = require('mongoose');
         - var goalSchema = new mongoose.Schema({ ... });
         - var Goal = mongoose.model('Goal', postSchema);
         - module.exports = Goal;
 
-- CDN --o--
-	- js-cookie
-		- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
-    - angular
-    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
-- Story build --o--
+- Story build --ox--
     - server.js
+    	- goal/task CRUD
     - public/index.html
+    	- CDN --o--
+			- js-cookie
+				- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+		    - angular
+		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		    - bootstrap
+		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     - public/app.js
+    	- angular build
 
-- CSS --o--
+- CSS --ox--
 	- bootstrap
 
+- +:
+	- score tracker
+	- color change based on step status
+	- navbar with goals
+	- show navbar on hover
+	- goal display:
+		- goal + next step
+		- add div lines around goal per number of steps
+
 - Remaining:
-	- a whole bunch
-    - story build
-    - debug
-    - fonts/bootstrap/draggable posts
+	- client side 
+		- user auth
+		- story build
+    - bootstrap/fonts
     - heroku
+    - extra's
+
 ---
 ---
 
@@ -251,15 +277,6 @@ Reference
 ---
 Comments/Notes:
 
-- explain use of angular AND jquery in passport login/app setup
-	- cf client/main.js
-	- use a bunch of console.logs
-
-- read about ng-disabled
-
-- #!/usr/bin/env node
-    - http://stackoverflow.com/questions/15061001/what-does-bin-env-mean-at-the-top-of-a-node-js-script
-
 - 
 
 ---
@@ -267,7 +284,7 @@ Comments/Notes:
 Shoutouts:
 
 - Kyle (dragable div)
-- Katie Z (modal)
+- Katie Z (user-auth; bootstrap modal)
 - Robbie (dynamic searches)
 
 
