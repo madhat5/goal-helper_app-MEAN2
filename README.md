@@ -231,8 +231,9 @@ App Build Steps:
     - public/app.js
     	- angular build
     		- user auth
-    		- goal CRUD
-    		- goal.step CRUD
+    		- goal CRUD controller
+    		- goal.step CRUD controller
+    		- user controller
     - public/style.css
 		- bootstrap
 
@@ -245,6 +246,8 @@ App Build Steps:
 		- goal + next step
 		- add div lines around goal per number of steps
 	- rotate through quotes (hide/show each)
+	- modal alert when user created, setTimeout
+	- modal to show goal list from navbar as drop down/ or just navbar dropdown?
 
 - Remaining:
 	- client side 

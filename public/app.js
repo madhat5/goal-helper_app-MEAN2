@@ -1,7 +1,6 @@
 // TEST
 // console.log('Sim Sim Salabim');
-
-// GOAL CONTROLLER
+// ====================================================
 angular.module('MyGoals', []).directive('ngmygoals', function(){
   return{
     controllerAs: 'goalController',
@@ -9,6 +8,9 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 
       this.$http = $http;
       var self = this;
+
+    // GOAL CONTROLLER (AND STEP?)
+    // ================================================
       self.goals = [];
       self.totalGoals = 0;
 
@@ -29,7 +31,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of GOAL GET
       this.getGoals();
 
-      // CREATE/ADD, POST
+      // CREATE/ADD GOAL, POST
       this.addGoal = function(){
         self.$http.post('/goals', {title: this.formGoalTitle}).then(function success(res){
           // TEST
@@ -80,9 +82,104 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
       }; // end of GOAL DELETE
 
+    // USER CONTROLLER
+    // ================================================
+      self.users = [];
+      self.totalUsers = 0;
+
+      this.totalUsers = function() {
+        return self.users.length
+      };
+
+      // ALL USERS, GET
+      this.getUsers = function(){
+        console.log('Searching for all users...');
+        self.$http.get('/users').then(function(res){
+          // TEST
+          console.log(res);
+
+          self.users = res.data;
+        });
+        return self.users;
+      }; // end of USER GET
+      this.getUsers();
+
+      // CREATE/ADD USER, POST
+      this.addUser = function(){
+        self.$http.post('/users', {username: this.formUserUsername, password_hash: this.formUserPassword}).then(function success(res){
+          // TEST
+          console.log(res.data);
+
+          self.users.push(res.data);;
+          self.formUserUsername = '';
+          self.formUserPassword = '';
+        }, function error(){
+          console.log("D'OH...CREATE ERROR...")
+        });
+      }; // end of USER POST
+
+      // EDIT USER
+        this.populateForm = function(user){
+          self.formUserId = user._id;
+          self.formUserUsername = user.username;
+          self.formUserPassword = user.password_hash;
+        };
+
+        this.editUser = function(){
+          var id = this.formUserId;
+          self.$http.put('/users/' + id, {
+            username: this.formUserUsername,
+            password_hash: this.formUserPassword
+          }).then(function success(res){
+            // TEST
+            console.log(res);
+
+            self.getUsers();
+            self.formUserId = '';
+            self.formUserUsername = '';
+            self.formUserPassword = '';
+          }, function error(){
+            console.log("D'OH...EDIT ERROR...")
+          });
+        }; // end of USER PUT
+
+      // DELETE USER
+      this.deleteUser = function(user){
+        var id = user._id;
+        self.$http.delete('/users/' + id).then(function success(res){
+          // TEST
+          console.log(res);
+
+          self.getUsers();
+        }, function error(){
+          console.log("D'OH...DELETE ERROR...");
+        });
+      }; // end of USER DELETE
+
     }] // end of controller
   }; // end of return
 }); // end of angular.module
 
-// TEMP STUFF ///////////////////////////////////
+// STEP CONTROLLER
+// ====================================================
+
+
+// TEMP STUFF
+// ====================================================
+
+
+
+
+
+
+    // <div class='create-form'>
+    //   <label>Comment:</label>
+    //   <input type='text' ng-model='my.formPostComment'>
+    //   <label>Author:</label>
+    //   <input type='text' ng-model='my.formPostAuthor'>
+    //   <button class='create-button' id='button-create-post' ng-click='my.addPost()'>Create a Post</button>
+    // </div>
+
+
+
 

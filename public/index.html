@@ -4,13 +4,10 @@
 
 <head>
   <title>Jmny</title>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
-
   <script type="text/javascript" src="app.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -22,6 +19,7 @@
       <div class='navbar-div'>
         <!-- add a href to each li item -->
         <li class='nav-item' ng-click=''>Tutorial</li>
+        <li class='nav-item' ng-click='goalController.getGoals()'>My Goals</li>
         <li class='nav-item' ng-click=''>Register</li>
         <li class='nav-item' ng-click=''>Login</li>
       </div>
@@ -29,40 +27,26 @@
 
     <div class='container-fluid'>
       <div id='landing-page' class='row'>
-
         <div class='welcome-banner'>
           <div class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
-              <h4 class='tagline'>Where we help # of users achieve #{{goalController.totalGoals}}</h4>
+              <h4 class='tagline'>Where we help #(*) of users achieve #{{goalController.totalGoals}} goals.</h4>
             </div>
-            <button id='welcome-login' class="btn btn-default" style='margin: 0 50%'>Login</button>
+            <br>
+            <button id='welcome-login' class="btn btn-default" style='margin: 0 45%'>Login</button>
+            <br>
             <br>
             <div class='welcome-info'>
               <p>
-                "When it is obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps."
+              "...a journey of a thousand miles begins with a single step..."
                 <br>
-                - Confucius
-              </p>
-              <p>
-                “If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them.”
                 <br>
-                - Henry David Thoreau
-              </p>
-              <p>
-                “A goal is not always meant to be reached, it often serves simply as something to aim at."
-                <br>
-                - Bruce Lee
-              </p>
-              <p>
-                “It is good to have an end to journey toward; but it is the journey that matters, in the end.”
-                <br>
-                - Ernest Hemingway
+                - Lao Tzu
               </p>
             </div>
           </div>
         </div> <!-- end of welcome-banner -->
-
         <div id='register-form' class='col-lg-4'>
           <h3 id='register-title' style='text-align: center'>Register</h3>
           <br>
@@ -76,15 +60,13 @@
           <br>
           <button id='register-submit' class="btn btn-default">Submit</button>
         </div> <!-- end of register-form -->
-
       </div> <!-- end of landing-page -->
     </div> <!-- end of container -->
 
-    <div class='goal-holder'>
+    <div class='goal-holder' ng-show=>
       <h3>Goal (angular) </h3>
       <p>Goal.Step (angular)</p>
       <br>
-
       <button id='goal-create' class="btn btn-default">Create a Goal</button>
       <button id='goal-view' class="btn btn-default">View my Goal</button>
       <br>
@@ -98,17 +80,8 @@
 </html>
 
 <!-- TEMP -->
-<!--   <div id='content-wrapper' ngmyposts>
 
-    <div class='create-form'>
-      <label>Comment:</label>
-      <input type='text' ng-model='my.formPostComment'>
-      <label>Author:</label>
-      <input type='text' ng-model='my.formPostAuthor'>
-      <button class='create-button' id='button-create-post' ng-click='my.addPost()'>Create a Post</button>
-    </div>
-
-    <div class='post-board' id='post-board'>
+<!--     <div class='post-board' id='post-board'>
       <div ng-repeat='post in my.posts'>
         <div class='post-container'>
           {{post.comment}}<br>

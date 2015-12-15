@@ -1,4 +1,5 @@
-// SETUP/////////////////////////////////////////
+// SETUP
+// ====================================================
 
 // DEPENDENCIES
 var express       = require('express'),
@@ -33,13 +34,14 @@ var Step = require('./models/step.js')
 
 // SEED
 
-// ROUTES////////////////////////////////////////
+// ROUTES
+// ====================================================
 // TEST
 // app.get('/test', function(req, res){
 //   res.send('This is a test');
 // });
 
-// USER AUTH ===================================
+// USER AUTH ==========================================
 
 // REGISTER
 app.post('/users', function(req, res){
@@ -207,7 +209,8 @@ app.delete('/step/:id', function(req, res){
   });
 });
 
-// TEMP STUFF //////////////////////////////////
+// TEMP STUFF
+// ====================================================
 
 
 
