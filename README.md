@@ -231,6 +231,9 @@ App Build Steps:
 	- color change based on step status
 	- navbar with goals
 	- show navbar on hover
+	- goal display:
+		- goal + next step
+		- add div lines around goal per number of steps
 
 - Remaining:
 	- client side 
