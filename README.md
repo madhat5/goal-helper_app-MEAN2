@@ -219,8 +219,6 @@ App Build Steps:
     	- Step CRUD
 
 - Story build --ox--
-    - server.js
-    	- goal/task CRUD
     - public/index.html
     	- CDN --o--
 			- js-cookie
@@ -229,11 +227,14 @@ App Build Steps:
 		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		    - bootstrap
 		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		    	- html build
     - public/app.js
     	- angular build
-
-- CSS --ox--
-	- bootstrap
+    		- user auth
+    		- goal CRUD
+    		- goal.step CRUD
+    - public/style.css
+		- bootstrap
 
 - +:
 	- score tracker
@@ -280,9 +281,11 @@ Reference
 	- https://docs.angularjs.org/api/ng/directive/ngSwitch
 	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
 	
-- CSS
-	- colors:
+- Misc
+	- CSS colors:
 		- https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
+	- Mongo commands:
+		- https://docs.mongodb.org/manual/reference/mongo-shell/
 
 
 

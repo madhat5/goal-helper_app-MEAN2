@@ -1,92 +1,88 @@
 // TEST
 // console.log('Sim Sim Salabim');
 
+// GOAL CONTROLLER
+angular.module('MyGoals', []).directive('ngmygoals', function(){
+  return{
+    controllerAs: 'goalController',
+    controller: ['$http', function GoalCtrl($http){
+
+      this.$http = $http;
+      var self = this;
+      self.goals = [];
+      self.totalGoals = 0;
+
+      this.totalGoals = function() {
+        return self.goals.length
+      };
+
+      // ALL GOALS, GET
+      this.getGoals = function(){
+        console.log('Searching for all goals...');
+        self.$http.get('/goals').then(function(res){
+          // TEST
+          console.log(res);
+
+          self.goals = res.data;
+        });
+        return self.goals;
+      }; // end of GOAL GET
+      this.getGoals();
+
+      // CREATE/ADD, POST
+      this.addGoal = function(){
+        self.$http.post('/goals', {title: this.formGoalTitle}).then(function success(res){
+          // TEST
+          console.log(res.data);
+
+          self.goals.push(res.data);;
+          self.formGoalTitle = '';
+        }, function error(){
+          console.log("D'OH...CREATE ERROR...")
+        });
+        // add goal.step ajax call to create?
+      }; // end of GOAL POST
+
+      // EDIT GOAL
+        this.populateForm = function(goal){
+          self.formGoalId = goal._id;
+          self.formGoalTitle = goal.title;
+          // self.formGoalStep = goal.step;
+        };
+
+        this.editGoal = function(){
+          var id = this.formGoalId;
+          self.$http.put('/goals/' + id, {
+            title: this.formGoalTitle,
+            // steps: this.formGoalStep
+          }).then(function success(res){
+            // TEST
+            console.log(res);
+
+            self.getGoals();
+            self.formGoalId = '';
+            self.formGoalTitle = '';
+          }, function error(){
+            console.log("D'OH...EDIT ERROR...")
+          });
+        }; // end of GOAL PUT
+
+      // DELETE GOAL
+      this.deleteGoal = function(goal){
+        var id = goal._id;
+        self.$http.delete('/goals/' + id).then(function success(res){
+          // TEST
+          console.log(res);
+
+          self.getGoals();
+        }, function error(){
+          console.log("D'OH...DELETE ERROR...");
+        });
+      }; // end of GOAL DELETE
+
+    }] // end of controller
+  }; // end of return
+}); // end of angular.module
 
 // TEMP STUFF ///////////////////////////////////
-// angular.module('MyPosts', []).directive('ngmyposts', function(){
-
-//   return {
-
-//     controllerAs: 'my',
-//     controller: ['$http', function PostCtrl($http){
-
-//       this.$http = $http;
-//       this.$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-//       var self = this;
-//       self.posts = [];
-//       self.totalPosts = 0;
-
-//       // >>? explain what this does...(dynamic)
-//       this.totalPosts = function() {
-//         return self.posts.length;
-//       };
-
-//       // All posts
-//       this.getPosts = function(){
-
-//         console.log('...Gathering all posts...');
-//         self.$http.get('/posts').then(function(res){
-//             // console.log(res);
-//             // console.log(res.data);
-//             self.posts = res.data;
-//         });
-
-//         return self.posts;
-//       };
-//       this.getPosts();
-
-//       // Create/Add post
-//       this.addPost = function(){
-
-//         self.$http.post('/posts', {comment: this.formPostComment, author: this.formPostAuthor}).then(function success(res){
-//             console.log(res.data);
-//             self.posts.push(res.data);
-//             self.formPostComment = '';
-//             self.formPostAuthor = '';
-//           }, function error(){
-//             console.log('...ERROR...');
-//         });
-//       };
-
-//       // Edit post
-//       this.populateForm = function(post){
-//         self.formPostId = post._id;
-//         self.formPostComment = post.comment;
-//         self.formPostAuthor = post.author;
-//       };
-
-//       this.editPost = function(){
-//         var id = this.formPostId;
-//         self.$http.put('/posts/' + id, {comment: this.formPostComment, author: this.formPostAuthor}).then(function success(res){
-//             console.log(res);
-//             self.getPosts();
-
-//             self.formPostId = '';
-//             self.formPostComment = '';
-//             self.formPostAuthor = '';
-//           }, function error(){
-//             console.log('...ERROR...');
-//         });
-//       };
-
-//       // Delete post
-//       this.deletePost = function(post){
-//         var id = post._id;
-//         self.$http.delete('/posts/' + id).then(function success (res){
-//             console.log(res);
-//             self.getPosts();
-//           }, function error(){
-//             console.log('...ERROR...')
-//         });
-//       };
-
-//     }] // close of controller
-//   }; // close of return object
-// }); // close of angular.module
-
-// // NOTES
-
-// // Explain:
-// // - formPostComment
-// // - formPostAuthor
 
