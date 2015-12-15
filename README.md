@@ -223,7 +223,7 @@ App Build Steps:
     - public/app.js
     	- angular build
 
-- CSS --o--
+- CSS --ox--
 	- bootstrap
 
 - +:
