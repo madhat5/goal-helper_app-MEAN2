@@ -280,6 +280,9 @@ Reference
 	- https://docs.angularjs.org/api/ng/directive/ngSwitch
 	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
 	
+- CSS
+	- colors:
+		- https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
 
 
 

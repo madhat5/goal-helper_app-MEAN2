@@ -1,6 +1,13 @@
 body {
-  background: url('http://jeknetwork.typepad.com/.a/6a00e554e88723883301a511ad66d6970c-pi');
-  /*opacity: 0.5;*/
+  background-image: url('http://jeknetwork.typepad.com/.a/6a00e554e88723883301a511ad66d6970c-pi');
+}
+
+#background-set {
+  background-color: rgba(255, 255, 255, .5);
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  position: fixed;
 }
 
 .nav-item {
@@ -27,17 +34,16 @@ body {
   margin: 5% 50%;
 }
 
-.welcome-banner {
-  position: relative;
-}
-
 .tagline {
   font-style: italic;
 }
 
-.register-form {
+#register-form {
   border: 2px;
   border-style: solid;
   width: 250px;
-  min-height: 250px;
+  min-height: 275px;
+  background-color: CadetBlue;
 }
+
+
