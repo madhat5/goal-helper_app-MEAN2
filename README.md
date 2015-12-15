@@ -200,14 +200,20 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- models build --o--
+- models build --x--
     - server.js
 		- var Goal = require('./models/goal');
+		- var Step = require('./models/step.js')
     - goal.js
         - var mongoose = require('mongoose');
         - var goalSchema = new mongoose.Schema({ ... });
-        - var Goal = mongoose.model('Goal', postSchema);
+        - var Goal = mongoose.model('Goal', goalSchema);
         - module.exports = Goal;
+    - step.js
+        - var mongoose = require('mongoose');
+        - var stepSchema = new mongoose.Schema({ ... });
+        - var Step = mongoose.model('Step', stepSchema);
+        - module.exports = Step;
 
 - Story build --ox--
     - server.js
@@ -239,6 +245,8 @@ App Build Steps:
 	- client side 
 		- user auth
 		- story build
+			- crud goals AND goal.steps
+				- when creating/saving goal, also create/save step then push data to goal.steps
     - bootstrap/fonts
     - heroku
     - extra's

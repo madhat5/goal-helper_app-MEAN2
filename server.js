@@ -28,7 +28,8 @@ mongoose.connect('mongodb://localhost/jmnyGoals')
 
 // MODELS
 var User = require('./models/user');
-// var Goal = require('./models/goal.js')
+var Goal = require('./models/goal.js')
+var Step = require('./models/step.js')
 
 // SEED
 
@@ -38,7 +39,7 @@ var User = require('./models/user');
 //   res.send('This is a test');
 // });
 
-// USER AUTH ====================================
+// USER AUTH ===================================
 
 // REGISTER
 app.post('/users', function(req, res){
@@ -98,7 +99,68 @@ app.get('/user/:id', function(req, res){
 
 // LOGOUT ?
 
-// TEMP STUFF && GARBAGE/////////////////////////
+
+// GOAL CRUD ==========================================
+
+// INDEX
+app.get('/goals', function(req, res){
+  Goal.find().then(function(goals){
+    console.log("Goals are being displayed ");
+    res.send(goals)
+  })
+});
+
+// CREATE
+app.post('/goals', function(req, res){
+  var goal = new Goal(req.body);
+  goal.save(function(err){
+    if (err){
+      console.log('ERROR MSG: ' + err);
+    } else {
+      console.log('>>> Your goal has been created, and saved');
+      res.send(goal)
+    };
+  })
+});
+
+// READ INDIVIDUAL
+app.get('goals/:id', function(req, res){
+  Goal.findById(req.params.id).then(function(goal){
+    console.log(goal);
+    res.send(goal)
+  });
+});
+
+// UPDATE
+app.put('/goal/:id', function (req, res){
+  Goal.findOneAndUpdate({
+    _id: req.params.id
+  }, {
+    $set: req.body
+  }, function(err, goal){
+    res.send(goal)
+  });
+});
+
+// DELETE
+app.delete('/goal/:id', function(req, res){
+  Goal.findOneAndRemove({ _id: req.params.id }, function(err){
+    if (err){ console.log(err) };
+    console.log('...Post has been deleted...');
+    res.send('Post Removed');
+  })
+});
+
+
+// GOAL.STEP CRUD ===================================
+
+// INDEX
+// CREATE
+// READ INDIVIDUAL
+// UPDATE
+// DELETE
+
+// TEMP STUFF //////////////////////////////////
 
 
 
