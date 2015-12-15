@@ -175,28 +175,34 @@ App Build Steps:
 	- touch public/app.js
 	- touch public/style.css
 
+- test connection --x--
+    - setup basic test route
+    - setup basic test index.html/app.js
+    - launch server (nodemon)
+
+- models build --x--
+    - mkdir models
+    	- touch models/user.js
+    - server.js
+    	- var User = require('./models/user.js');
+    - user.js
+		- var mongoose = require('mongoose'),
+		- var userSchema = new mongoose.Schema({ ... });
+		- var User = mongoose.model('User', userSchema);
+		- module.exports = User
+
 - user auth build --ox--
 	- server.js
 		- create register
 		- create login/user info
 		- logout?
-
-- test connection --ox--
-    - setup basic test route
-    - setup basic test index.html/app.js
-    - launch server (nodemon)
+	- CURL test
+		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
+		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
 - models build --o--
-    - mkdir models
-    	- touch models/user.js
     - server.js
-    	- var User = require('./models/user.js');
-    	- var Goal = require('./models/goal');
-    - user.js
-		- var mongoose = require('mongoose'),
-		- var userSchema = new mongoose.Schema({ ... });
-		- var user = mongoose.model('User', userSchema);
-		- module.exports = User
+		- var Goal = require('./models/goal');
     - goal.js
         - var mongoose = require('mongoose');
         - var goalSchema = new mongoose.Schema({ ... });

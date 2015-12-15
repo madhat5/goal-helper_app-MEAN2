@@ -27,7 +27,7 @@ app.use(express.static('public'));
 mongoose.connect('mongodb://localhost/jmnyGoals')
 
 // MODELS
-// var User = require('./models/user.js');
+var User = require('./models/user');
 // var Goal = require('./models/goal.js')
 
 // SEED
@@ -48,7 +48,7 @@ app.post('/users', function(req, res){
   var user = new User ({
     // email: req.body.email,
     username: req.body.username,
-    password_hash: req.body.passwordHash
+    password_hash: passwordHash
   });
 
   user.save(function(err){
@@ -70,10 +70,10 @@ app.post('/users', function(req, res){
 app.post('/login', function(req, res){
 
   var requestUsername   = req.body.username,
-      requestPassword   = md5(req.body.password);
+      requestpasswordHash   = md5(req.body.password);
 
   User.findOne({'username': requestUsername}).exec(function( err, user ){
-      if (user != null && requestPassword == user.password_hash){
+      if (user != null && requestpasswordHash == user.password_hash){
         res.cookie('loggedinId', user.id);
         res.send(user);
       } else {
