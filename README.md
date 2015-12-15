@@ -209,26 +209,34 @@ App Build Steps:
         - var Goal = mongoose.model('Goal', postSchema);
         - module.exports = Goal;
 
-- CDN --o--
-	- js-cookie
-		- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
-    - angular
-    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
 - Story build --o--
     - server.js
+    	- goal/task CRUD
     - public/index.html
+    	- CDN --o--
+			- js-cookie
+				- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+		    - angular
+		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     - public/app.js
+    	- angular build
 
 - CSS --o--
 	- bootstrap
 
+- +:
+	- score tracker
+	- color change based on step status
+	- navbar with goals
+
 - Remaining:
-	- a whole bunch
-    - story build
-    - debug
-    - fonts/bootstrap/draggable posts
+	- client side 
+		- user auth
+		- story build
+    - bootstrap/fonts
     - heroku
+    - extra's
+
 ---
 ---
 
