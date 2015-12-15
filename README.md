@@ -214,6 +214,9 @@ App Build Steps:
         - var stepSchema = new mongoose.Schema({ ... });
         - var Step = mongoose.model('Step', stepSchema);
         - module.exports = Step;
+    - server.js
+    	- Goal CRUD
+    	- Step CRUD
 
 - Story build --ox--
     - server.js

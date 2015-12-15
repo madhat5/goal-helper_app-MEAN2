@@ -120,7 +120,8 @@ app.post('/goals', function(req, res){
       console.log('>>> Your goal has been created, and saved');
       res.send(goal)
     };
-  })
+  });
+  // also create embedded steps?
 });
 
 // READ INDIVIDUAL
@@ -140,25 +141,71 @@ app.put('/goal/:id', function (req, res){
   }, function(err, goal){
     res.send(goal)
   });
+  // also update embedded steps?
 });
 
 // DELETE
 app.delete('/goal/:id', function(req, res){
   Goal.findOneAndRemove({ _id: req.params.id }, function(err){
     if (err){ console.log(err) };
-    console.log('...Post has been deleted...');
-    res.send('Post Removed');
-  })
+    console.log('...Goal has been deleted...');
+    res.send('Goal Removed');
+  });
+  // also delete embedded steps
 });
 
 
 // GOAL.STEP CRUD ===================================
 
 // INDEX
+app.get('/steps', function(req, res){
+  Step.find().then(function(steps){
+    console.log("Steps are being displayed ");
+    res.send(steps)
+  })
+});
+
 // CREATE
+app.post('/steps', function(req, res){
+  var step = new Step(req.body);
+  step.save(function(err){
+    if (err){
+      console.log('ERROR MSG: ' + err);
+    } else {
+      console.log('>>> Your goal step has been created, and saved');
+      res.send(step)
+    };
+  });
+});
+
 // READ INDIVIDUAL
+app.get('steps/:id', function(req, res){
+  Steps.findById(req.params.id).then(function(step){
+    console.log(step);
+    res.send(step)
+  });
+});
+
 // UPDATE
+app.put('/step/:id', function (req, res){
+  Step.findOneAndUpdate({
+    _id: req.params.id
+  }, {
+    $set: req.body
+  }, function(err, step){
+    res.send(step)
+  });
+});
+
 // DELETE
+// DELETE
+app.delete('/step/:id', function(req, res){
+  Step.findOneAndRemove({ _id: req.params.id }, function(err){
+    if (err){ console.log(err) };
+    console.log('...Goal step has been deleted...');
+    res.send('Goal step Removed');
+  });
+});
 
 // TEMP STUFF //////////////////////////////////
 
