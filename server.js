@@ -26,7 +26,7 @@ app.use(express.static('public'));
 
 // MONGO
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/jmnyGoals';
-mongoose.connect('mongoUri')
+mongoose.connect(mongoUri);
 
 // MODELS
 var User = require('./models/user');
