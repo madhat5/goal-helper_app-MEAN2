@@ -251,6 +251,7 @@ App Build Steps:
 			 - create step + auto display form when creating a goal + push to goal.step
 			 - delete/completed
 		- add submit button for edit goal
+		- navbar
 	- SHORT
 		- navbar with goals
 		- goal display:
