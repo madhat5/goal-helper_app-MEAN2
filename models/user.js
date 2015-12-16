@@ -11,6 +11,7 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  goals: Array,
   created_at: {
     type: Date,
     default: Date.now
@@ -24,3 +25,4 @@ var userSchema = new mongoose.Schema({
 var User = mongoose.model('User', userSchema);
 
 module.exports = User;
+

@@ -200,18 +200,25 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- models build --o--
+- models build --x--
     - server.js
 		- var Goal = require('./models/goal');
+		- var Step = require('./models/step.js')
     - goal.js
         - var mongoose = require('mongoose');
         - var goalSchema = new mongoose.Schema({ ... });
-        - var Goal = mongoose.model('Goal', postSchema);
+        - var Goal = mongoose.model('Goal', goalSchema);
         - module.exports = Goal;
+    - step.js
+        - var mongoose = require('mongoose');
+        - var stepSchema = new mongoose.Schema({ ... });
+        - var Step = mongoose.model('Step', stepSchema);
+        - module.exports = Step;
+    - server.js
+    	- Goal CRUD
+    	- Step CRUD
 
 - Story build --ox--
-    - server.js
-    	- goal/task CRUD
     - public/index.html
     	- CDN --o--
 			- js-cookie
@@ -220,11 +227,16 @@ App Build Steps:
 		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		    - bootstrap
 		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		    	- html build
     - public/app.js
     	- angular build
-
-- CSS --ox--
-	- bootstrap
+    		- user auth
+    			- build around ngshow (if user true, show all, else (please login))
+    		- goal CRUD controller
+    		- goal.step CRUD controller
+    		- user controller
+    - public/style.css
+		- bootstrap
 
 - +:
 	- score tracker
@@ -234,11 +246,17 @@ App Build Steps:
 	- goal display:
 		- goal + next step
 		- add div lines around goal per number of steps
+	- rotate through quotes (hide/show each)
+	- modal alert when user created, setTimeout
+	- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
+	- alert when click on my goals (nav bar): if not logged in, "please log in"
 
 - Remaining:
 	- client side 
 		- user auth
 		- story build
+			- crud goals AND goal.steps
+				- when creating/saving goal, also create/save step then push data to goal.steps
     - bootstrap/fonts
     - heroku
     - extra's
@@ -269,6 +287,11 @@ Reference
 	- https://docs.angularjs.org/api/ng/directive/ngSwitch
 	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
 	
+- Misc
+	- CSS colors:
+		- https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
+	- Mongo commands:
+		- https://docs.mongodb.org/manual/reference/mongo-shell/
 
 
 
