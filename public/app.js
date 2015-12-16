@@ -29,7 +29,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
         return self.goals;
       }; // end of GOAL GET
-      this.getGoals();
 
       // CREATE/ADD GOAL, POST
       this.addGoal = function(){
@@ -102,7 +101,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
         return self.users;
       }; // end of USER GET
-      this.getUsers();
 
       // CREATE/ADD USER, POST
       this.addUser = function(){
