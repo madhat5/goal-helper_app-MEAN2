@@ -38,12 +38,12 @@
             </div>
             <br>
               <div id='login-input'>
-                <input type='text' placeholder='Username/Email' ng-model='goalController.formUserUsername'>
-                <input type='text' placeholder='Password' ng-model='goalController.formUserPassword'>
+                <input id='login-username' type='text' class='validate' placeholder='Username/Email' ng-model='goalController.loginUsername'>
+                <input id='login-password' type='password' placeholder='Password' ng-model='goalController.loginPassword'>
               </div>
             <br>
             <br>
-            <button id='welcome-login' class="btn btn-default" style='margin: 0 45%'>Login</button>
+            <button id='welcome-login' type='submit' class="btn btn-default" style='margin: 0 45%' name='action' ng-click='goalController.loginSubmit()'>Login</button>
             <br>
             <br>
             <div class='welcome-info'>
@@ -64,7 +64,7 @@
           <input id='register-username' type='text' class='validate' placeholder='Username/Email' ng-model='goalController.registerUsername'>
           <br>
           <br>
-          <label class='register-form-password'>Password</label>
+          <label for='password' class='register-form-password'>Password</label>
           <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='goalController.registerPassword'>
           <br>
           <br>

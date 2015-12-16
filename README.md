@@ -244,7 +244,7 @@ App Build Steps:
 
 - Remaining/+Features:
 	- CRITICAL
-		- login html
+		- login html --x
 		- push goal create to user.goal
 		- step crud + save to user
 			 - get all user.goals.steps
@@ -281,7 +281,7 @@ Reference
 	
 - Heroku
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d04/INSTRUCTOR/heroku.md
-	
+
 - Embedding/referencing:
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Ba1%5Dmongo.md
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Bb1%5Dmongoose_data_modeling.md
