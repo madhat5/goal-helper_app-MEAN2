@@ -27,11 +27,11 @@
       </div>
     </ul>
 
-    <div class='container-fluid'>
+    <div class='container-fluid' >
       <div id='landing-page' class='row'>
         <!-- WELCOME + LOGIN -->
-        <div class='welcome-banner'>
-          <div class='col-lg-4 col-lg-offset-4'>
+        <div class='welcome-banner' ng-if='goalController.login'>
+          <div id='welcome-banner2' class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
               <h4 class='tagline'>Where we help #{{goalController.totalUsers}} of users achieve #{{goalController.totalGoals}} goals.</h4>
@@ -57,7 +57,7 @@
           </div>
         </div> <!-- end of welcome-banner -->
         <!-- REGISTER -->
-        <div id='register-form' class='col-lg-4'>
+        <div id='register-form' class='col-lg-4' ng-if='goalController.register'>
           <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
           <label for='username' class='register-form-username'>Username or Email</label>
@@ -74,26 +74,29 @@
     </div> <!-- end of container -->
 
     <!-- GOAL CREATE -->
-    <div class='create-form'>
-      <label>What's your goal?</label>
-      <br>
-      <input type='text' ng-model='goalController.formGoalTitle'>
-      <br>
-      <br>
-      <button id='goal-create' class="btn btn-default" ng-click='goalController.addGoal()'>Create a Goal</button>
-    </div>
-
-    <!-- GOAL DISPLAY -->
-    <div class='goal-container' ng-repeat='goal in goalController.goals'>
-      <div class='goal-holder'>
-        {{goal.goalTitle}}
+    <div class='row'>
+      <div id='goal-create-form' class='col-lg-4 col-lg-offset-5'>
+        <label style="font-family: 'Ribeye', cursive;">What's your goal?</label>
         <br>
         <br>
-        <p>Goal.Step (angular)</p>
-        <button id='step-edit' class="btn btn-default" ng-click='goalController.populateGoalForm(goal)'>Edit my goal</button>
+        <input type='text' ng-model='goalController.formGoalTitle'>
         <br>
-        <!-- change delete into completed, and push to an array in user model -->
+        <br>
+        <button id='goal-create' class="btn btn-default" ng-click='goalController.addGoal()'>Create a Goal</button>
       </div>
+    </div>
+    <!-- GOAL DISPLAY -->
+    <div class='row'>
+      <div id='goal-container' ng-repeat='goal in goalController.goals' class='col-lg-4 col-lg-offset-4'>
+        <div class='goal-holder'>
+          {{goal.goalTitle}}
+          <br>
+          <br>
+          <p>Goal.Step (angular)</p>
+          <button id='step-edit' class="btn btn-default" ng-click='goalController.populateGoalForm(goal)'>Edit my goal</button>
+          <br>
+          <!-- change delete into completed, and push to an array in user model -->
+        </div>
     </div>
 
   </div> <!-- end of ngmygoals -->
