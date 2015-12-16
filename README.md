@@ -275,11 +275,6 @@ Reference
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Ba1%5Dmongo.md
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Bb1%5Dmongoose_data_modeling.md
 
-- Passport
-	- http://mherman.org/blog/2015/07/02/handling-user-authentication-with-the-mean-stack/#.Vmove-ODGko
-	- strategy:
-		- http://www.codexpedia.com/node-js/node-js-authentication-using-passport-local-strategy/
-
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
 
