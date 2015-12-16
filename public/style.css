@@ -20,15 +20,15 @@ button {
 }
 
 .navbar {
-  border: 2px;
+/*  border: 2px;
   border-radius: 7px;
   border-color: black;
-  border-style: solid;
+  border-style: solid;*/
   font-family: 'Ubuntu', sans-serif;
 }
 
 .navbar-div {
-  padding-left: 75%;
+  /*padding-left: 75%;*/
 }
 
 #welcome-banner2 {
@@ -69,9 +69,21 @@ button {
   border-style: solid;
   border-radius: 5px;
   width: 250px;
-  min-height: 250px;
+  height: 250px;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(255, 255, 255, .5);
   padding: 2%;
   margin-top: 75px;
+}
+
+#goal-container {
+  background-color: rgba(95,126,160,0.5);
+  font-family: 'Ubuntu', sans-serif;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 1000px;
+  height: 300px;
+  margin-top: 100px;
+  margin: 5% auto;
 }
