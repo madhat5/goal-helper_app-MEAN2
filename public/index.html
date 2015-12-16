@@ -35,6 +35,12 @@
               <h4 class='tagline'>Where we help #{{goalController.totalUsers}} of users achieve #{{goalController.totalGoals}} goals.</h4>
             </div>
             <br>
+              <div id='login-input'>
+                <input type='text' placeholder='Username/Email' ng-model='goalController.formUserUsername'>
+                <input type='text' placeholder='Password' ng-model='goalController.formUserPassword'>
+              </div>
+            <br>
+            <br>
             <button id='welcome-login' class="btn btn-default" style='margin: 0 45%'>Login</button>
             <br>
             <br>
@@ -52,7 +58,7 @@
           <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
           <label class='register-form-username'>Username/Email</label>
-          <input type='text' placeholder='Username or Email' ng-model='goalController.formUserUsername'>
+          <input type='text' placeholder='Username/Email' ng-model='goalController.formUserUsername'>
           <br>
           <br>
           <label class='register-form-password'>Password</label>
@@ -88,9 +94,5 @@
   </div> <!-- end of ngmygoals -->
 </body>
 </html>
-
-<!-- TEMP -->
-
-<!-- ng-show -->
 
 

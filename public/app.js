@@ -14,6 +14,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       self.goals = [];
       self.totalGoals = 0;
 
+      // ALL GOALS
       this.totalGoals = function() {
         return self.goals.length
       };
@@ -92,9 +93,10 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       self.home = false;
       self.loggedIn = false;
 
-      // this.totalUsers = function() {
-      //   return self.users.length
-      // };
+      // ALL USERS
+      this.totalUsers = function() {
+        return self.users.length
+      };
 
       // USER, GET
       this.getUser = function(){

@@ -242,6 +242,7 @@ App Build Steps:
 
 - +:
 	-short
+		- add submit button for edit goal
 		- navbar with goals
 		- goal display:
 			- goal + next step
