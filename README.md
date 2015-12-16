@@ -106,6 +106,8 @@ Models:
 		- step_completed: boolean
 	- goal_completed: boolean
 
+- step
+
 User story: (UPDATE)
 (MOAR MODALS!!!)
 
@@ -239,17 +241,19 @@ App Build Steps:
 		- bootstrap
 
 - +:
-	- score tracker
-	- color change based on step status
-	- navbar with goals
-	- show navbar on hover
-	- goal display:
-		- goal + next step
-		- add div lines around goal per number of steps
-	- rotate through quotes (hide/show each)
-	- modal alert when user created, setTimeout
-	- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
-	- alert when click on my goals (nav bar): if not logged in, "please log in"
+	-short
+		- navbar with goals
+		- goal display:
+			- goal + next step
+		- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
+		- alert when click on my goals (nav bar): if not logged in, "please log in"
+		- modal alert when user created, setTimeout
+	-long
+		- goal display:
+			- add div lines around goal per number of steps
+		- show navbar on hover
+		- score tracker
+		- color change based on step status
 
 - Remaining:
 	- client side 
