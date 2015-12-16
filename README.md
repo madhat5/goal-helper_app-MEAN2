@@ -251,7 +251,7 @@ App Build Steps:
 			 - create step + auto display form when creating a goal + push to goal.step
 			 - delete/completed
 		- add submit button for edit goal
-
+		- navbar
 	- SHORT
 		- navbar with goals
 		- goal display:
@@ -260,6 +260,7 @@ App Build Steps:
 		- alert when click on my goals (nav bar): if not logged in, "please log in"
 		- modal alert when user created, setTimeout
 	- LONG
+		- make responsive
 		- goal display:
 			- add div lines around goal per number of steps
 		- show navbar on hover
@@ -314,6 +315,7 @@ Comments/Notes:
 Shoutouts:
 
 - Katie Z (user-auth; bootstrap modal)
+- Malina (design)
 - Kyle (dragable div)
 - Robbie (dynamic searches)
 
