@@ -29,6 +29,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
         return self.goals;
       }; // end of GOAL GET
+      this.getGoals();
 
       // CREATE/ADD GOAL, POST
       this.addGoal = function(){
