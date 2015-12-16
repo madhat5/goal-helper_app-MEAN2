@@ -244,7 +244,7 @@ App Build Steps:
 
 - Remaining/+Features:
 	- CRITICAL
-		- login html --x
+		- show/hide based on user login --x
 		- push goal create to user.goal
 		- step crud + save to user
 			 - get all user.goals.steps
