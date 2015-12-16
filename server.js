@@ -43,6 +43,14 @@ var Step = require('./models/step.js')
 
 // USER AUTH ==========================================
 
+// INDEX
+app.get('/users', function(req, res){
+  User.find().then(function(users){
+    console.log("Users are being displayed ");
+    res.send(users)
+  })
+});
+
 // REGISTER
 app.post('/users', function(req, res){
 
