@@ -240,7 +240,16 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
-- Heroku
+- Heroku --ox--
+	- heroku create
+	- touch Procfile
+	- Profile
+		- web: node app.js
+	- npm install -g foreman
+	- server.js
+		- var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/jmnyGoals';
+		- mongoose.connect(mongoUri);
+	- git push heroku master
 
 - Remaining/+Features:
 	- CRITICAL
