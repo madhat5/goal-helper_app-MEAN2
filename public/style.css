@@ -1,0 +1,50 @@
+body {
+  background-image: url('http://jeknetwork.typepad.com/.a/6a00e554e88723883301a511ad66d6970c-pi');
+}
+
+#background-set {
+  background-color: rgba(255, 255, 255, .5);
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  position: fixed;
+}
+
+.nav-item {
+  display: inline;
+  padding-left: 10px;
+}
+
+.navbar {
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  border-style: solid;
+}
+
+.navbar-div {
+  padding-left: 75%;
+}
+
+.mini-banner{
+  text-align: center;
+}
+
+.welcome-login {
+  margin: 5% 50%;
+}
+
+.tagline {
+  font-style: italic;
+}
+
+#register-form {
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 250px;
+  min-height: 275px;
+  background-color: CadetBlue;
+}
+
+
