@@ -240,6 +240,8 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
+- Heroku
+
 - Remaining/+Features:
 	- CRITICAL
 		- login html
@@ -249,6 +251,7 @@ App Build Steps:
 			 - create step + auto display form when creating a goal + push to goal.step
 			 - delete/completed
 		- add submit button for edit goal
+
 	- SHORT
 		- navbar with goals
 		- goal display:
@@ -263,7 +266,7 @@ App Build Steps:
 		- score tracker
 		- color change based on step status
 
-- Heroku
+
 
 
 ---
@@ -275,7 +278,10 @@ Reference
 
 - Git merging
     - https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d02/INSTRUCTOR/git_solo.md
-
+	
+- Heroku
+	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d04/INSTRUCTOR/heroku.md
+	
 - Embedding/referencing:
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Ba1%5Dmongo.md
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Bb1%5Dmongoose_data_modeling.md
@@ -286,10 +292,11 @@ Reference
 - Angular if/else
 	- https://docs.angularjs.org/api/ng/directive/ngSwitch
 	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
-	
+
 - Misc
 	- CSS colors:
 		- https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
+		- http://stackoverflow.com/questions/23201134/transparent-argb-hex-value
 	- Mongo commands:
 		- https://docs.mongodb.org/manual/reference/mongo-shell/
 
@@ -306,8 +313,8 @@ Comments/Notes:
 ---
 Shoutouts:
 
-- Kyle (dragable div)
 - Katie Z (user-auth; bootstrap modal)
+- Kyle (dragable div)
 - Robbie (dynamic searches)
 
 

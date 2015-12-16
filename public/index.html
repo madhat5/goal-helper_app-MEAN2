@@ -16,6 +16,7 @@
 <body>
   <div id='background-set' ngmygoals>
 
+    <!-- NAVBAR -->
     <ul class='navbar'>
       <div class='navbar-div'>
         <!-- add a href to each li item -->
@@ -28,6 +29,7 @@
 
     <div class='container-fluid'>
       <div id='landing-page' class='row'>
+        <!-- WELCOME + LOGIN -->
         <div class='welcome-banner'>
           <div class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
@@ -54,22 +56,24 @@
             </div>
           </div>
         </div> <!-- end of welcome-banner -->
+        <!-- REGISTER -->
         <div id='register-form' class='col-lg-4'>
           <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
-          <label class='register-form-username'>Username/Email</label>
-          <input type='text' placeholder='Username/Email' ng-model='goalController.formUserUsername'>
+          <label for='username' class='register-form-username'>Username/Email</label>
+          <input id='register-username' type='text' class='validate' placeholder='Username/Email' ng-model='goalController.registerUsername'>
           <br>
           <br>
           <label class='register-form-password'>Password</label>
-          <input type='text' placeholder='Password' ng-model='goalController.formUserPassword'>
+          <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='goalController.registerPassword'>
           <br>
           <br>
-          <button id='register-submit' class="btn btn-default" ng-click='goalController.addUser()'>Submit</button>
+          <button id='register-submit' type='submit' name='action' class="btn btn-default" ng-click='goalController.registerSubmit()'>Submit</button>
         </div> <!-- end of register-form -->
       </div> <!-- end of landing-page -->
     </div> <!-- end of container -->
 
+    <!-- GOAL CREATE -->
     <div class='create-form'>
       <label>What's your goal?</label>
       <br>
@@ -79,6 +83,7 @@
       <button id='goal-create' class="btn btn-default" ng-click='goalController.addGoal()'>Create a Goal</button>
     </div>
 
+    <!-- GOAL DISPLAY -->
     <div class='goal-container' ng-repeat='goal in goalController.goals'>
       <div class='goal-holder'>
         {{goal.goalTitle}}
