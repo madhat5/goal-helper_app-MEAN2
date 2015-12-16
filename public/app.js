@@ -166,3 +166,79 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 // TEMP STUFF
 // ====================================================
 
+      self.currentUser = [{}];
+      self.signUp = false;
+      self.signIn = false;
+      self.home = false;
+      self.signedIn = false;
+
+      this.getUser = function() {
+        if (Cookies.get("loggedinId") != null) {
+          self.$http.get("/users/" + Cookies.get("loggedinId")).then(function success(response) {
+            self.signedIn = true;
+            self.signUp = false;
+            self.signIn = false;
+          })
+        } else {
+          self.signedIn = false;
+        }
+      }
+
+      this.getUser();
+
+      this.signUpForm = function() {
+        self.signUp = true;
+        self.signIn = false;
+      }
+
+      // ============================================
+      // send ajax post request to create a new user
+      // ============================================
+      this.signUpSubmit = function() {
+        self.$http.post("/users", {username: this.signUpUsername, email: this.signUpEmail, first_name: this.signUpFirstName, last_name: this.signUpLastName, password: this.signUpPassword}).then(function success(response) {
+          self.signUpUsername = "";
+          self.signUpEmail = "";
+          self.signUpFirstName = "";
+          self.signUpLastName = "";
+          self.signUpPassword = "";
+          self.signedIn = true;
+          self.signUp = false;
+          self.signIn = false;
+        }, function error() {
+          alert("Error: Something went wrong. Please try again or log in.")
+        })
+      }
+
+      this.signInForm = function() {
+        self.signIn = true;
+        self.signUp = false;
+      }
+
+
+      // ============================================
+      // log in existing user
+      // ============================================
+      this.signInSubmit = function() {
+        self.$http.post("/login", {email: this.signInEmail, password: this.signInPassword}).then(function success(response) {
+          self.signedIn = true;
+          this.signInEmail = "";
+          this.signInPassword = "";
+          self.getUser();
+
+        }, function error() {
+          alert("Error: Wrong email or password")
+        })
+      }
+
+
+      // ============================================
+      // sign out a user
+      // ============================================
+      this.signOut = function() {
+        Cookies.remove("loggedinId");
+        self.getUser();
+      }
+    }
+  ]}
+})
+
