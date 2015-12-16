@@ -250,17 +250,19 @@ App Build Steps:
 		- var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/jmnyGoals';
 		- mongoose.connect(mongoUri);
 	- git push heroku master
+	- heroku open
 
 - Remaining/+Features:
 	- CRITICAL
 		- show/hide based on user login --x
 		- push goal create to user.goal
+		- logout + navbar (including form modals?)
+		- goal div design
 		- step crud + save to user
 			 - get all user.goals.steps
 			 - create step + auto display form when creating a goal + push to goal.step
 			 - delete/completed
 		- add submit button for edit goal
-		- navbar
 	- SHORT
 		- navbar with goals
 		- goal display:
@@ -269,6 +271,7 @@ App Build Steps:
 		- alert when click on my goals (nav bar): if not logged in, "please log in"
 		- modal alert when user created, setTimeout
 	- LONG
+		- carrousel
 		- make responsive
 		- goal display:
 			- add div lines around goal per number of steps

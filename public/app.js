@@ -114,7 +114,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
           self.loggedIn = false;
         };
       }; // end of USER GET
-      this.getUser();
+      // this.getUser();
 
       // REGISTER USER FORM
       this.registerForm = function(){
@@ -164,44 +164,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         Cookies.remove('loggedIn');
         self.getUser
       };
-
-      // // EDIT USER
-      //   this.populateUserForm = function(user){
-      //     self.formUserId = user._id;
-      //     self.formUserUsername = user.username;
-      //     self.formUserPassword = user.password_hash;
-      //   };
-
-      //   this.editUser = function(){
-      //     var id = this.formUserId;
-      //     self.$http.put('/users/' + id, {
-      //       username: this.formUserUsername,
-      //       password_hash: this.formUserPassword
-      //     }).then(function success(res){
-      //       // TEST
-      //       console.log(res);
-
-      //       self.getUser();
-      //       self.formUserId = '';
-      //       self.formUserUsername = '';
-      //       self.formUserPassword = '';
-      //     }, function error(){
-      //       console.log("D'OH...EDIT ERROR...")
-      //     });
-      //   }; // end of USER PUT
-
-      // // DELETE USER
-      // this.deleteUser = function(user){
-      //   var id = user._id;
-      //   self.$http.delete('/users/' + id).then(function success(res){
-      //     // TEST
-      //     console.log(res);
-
-      //     self.getUser();
-      //   }, function error(){
-      //     console.log("D'OH...DELETE ERROR...");
-      //   });
-      // }; // end of USER DELETE
 
     }] // end of controller
   }; // end of return

@@ -21,10 +21,11 @@
     <ul class='navbar'>
       <nav class="navbar navbar-default">
         <!-- add a href to each li item -->
-        <li class='nav-item' ng-click=''>Tutorial</li>
-        <li class='nav-item' ng-click='goalController.getGoals()'>My Goals</li>
-        <li class='nav-item' ng-click=''>Register</li>
-        <li class='nav-item' ng-click=''>Login</li>
+        <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Tutorial</a></li>
+        <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>My Goals</a></li>
+        <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Register</a></li>
+        <li class='nav-item'><a href="#" ng-click=''>Login</a></li>
+        <li class='nav-item'><a href="#" ng-click='goalController.logOut()'>Login</a></li>
       </nav>
     </ul>
 
@@ -96,7 +97,7 @@
             <br>
             <p>Goal.Step (angular)</p>
             <button id='step-edit' class="btn btn-default" ng-click='goalController.populateGoalForm(goal)'>Edit my goal</button>
-            <button id='goal-delete' class="btn btn-default" ng-click='goalController.deleteGoal()'>Completed my Goal</button>
+            <button id='goal-delete' class="btn btn-default" ng-click='goalController.deleteGoal(goal)'>Completed my Goal</button>
             <br>
             <br>
             <!-- change delete into completed, and push to an array in user model -->
