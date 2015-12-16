@@ -25,14 +25,14 @@
         <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>My Goals</a></li>
         <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Register</a></li>
         <li class='nav-item'><a href="#" ng-click=''>Login</a></li>
-        <li class='nav-item'><a href="#" ng-click='goalController.logOut()'>Login</a></li>
+        <li class='nav-item'><a href="#" ng-show='goalController.loggedIn'ng-click='goalController.logOut()'>Logout</a></li>
       </nav>
     </ul>
 
     <div class='container-fluid' >
       <div id='landing-page' class='row'>
         <!-- WELCOME + LOGIN  ng-if='goalController.login-->
-        <div class='welcome-banner' ng-show='goalController.loggeddIn'>
+        <div class='welcome-banner' ng-hide='goalController.loggedIn'>
           <div id='welcome-banner2' class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
@@ -59,7 +59,7 @@
           </div>
         </div> <!-- end of welcome-banner ng-if='goalController.register'-->
         <!-- REGISTER -->
-        <div id='register-form' class='col-lg-4' ng-show='goalController.loggeddIn'>
+        <div id='register-form' class='col-lg-4' ng-hide='goalController.loggedIn'>
           <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
           <label for='username' class='register-form-username'>Username or Email</label>
@@ -76,7 +76,7 @@
     </div> <!-- end of container -->
 
     <!-- GOAL CREATE -->
-    <div class='row'>
+    <div class='row' ng-show='goalController.loggeddIn'>
       <div id='goal-create-form' class='col-lg-4 col-lg-offset-5'>
         <label style="font-family: 'Ribeye', cursive;">What's your goal?</label>
         <br>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <!-- GOAL DISPLAY -->
-    <div class='row'>
+    <div class='row' ng-show='goalController.loggeddIn'>
       <div id='goal-container'>
         <div ng-repeat='goal in goalController.goals' class='col-lg-4'>
           <div class='goal-holder'>

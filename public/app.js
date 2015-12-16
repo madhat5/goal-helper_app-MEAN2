@@ -151,6 +151,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
           console.log(res);
 
           self.loggedIn = true;
+          console.log(self.loggedIn)
           this.loginUsername = '';
           this.loginPassword = '';
           self.getUser();
@@ -162,7 +163,8 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       // LOGOUT USER
       this.logOut = function(){
         Cookies.remove('loggedIn');
-        self.getUser
+        self.getUser;
+        console.log(Cookies);
       };
 
     }] // end of controller
