@@ -31,7 +31,8 @@ button {
   padding-left: 75%;
 }
 
-.welcome-banner {
+#welcome-banner2 {
+  margin-top: 100px;
 }
 
 .mini-banner{
@@ -62,4 +63,14 @@ button {
   font-family: 'Ubuntu', sans-serif;
 }
 
-
+.goal-create-form {
+  text-align: center;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 250px;
+  min-height: 250px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(255, 255, 255, .5);
+  padding: 2%;
+}

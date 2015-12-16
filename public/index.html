@@ -31,7 +31,7 @@
       <div id='landing-page' class='row'>
         <!-- WELCOME + LOGIN -->
         <div class='welcome-banner' ng-if='goalController.login'>
-          <div class='col-lg-4 col-lg-offset-4'>
+          <div id='welcome-banner2' class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
               <h4 class='tagline'>Where we help #{{goalController.totalUsers}} of users achieve #{{goalController.totalGoals}} goals.</h4>
@@ -74,8 +74,9 @@
     </div> <!-- end of container -->
 
     <!-- GOAL CREATE -->
-    <div class='create-form'>
-      <label>What's your goal?</label>
+    <div class='goal-create-form'>
+      <label style="font-family: 'Ribeye', cursive;">What's your goal?</label>
+      <br>
       <br>
       <input type='text' ng-model='goalController.formGoalTitle'>
       <br>
