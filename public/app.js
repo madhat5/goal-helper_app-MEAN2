@@ -46,7 +46,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of GOAL POST
 
       // EDIT GOAL
-        this.populateForm = function(goal){
+        this.populateGoalForm = function(goal){
           self.formGoalId = goal._id;
           self.formGoalTitle = goal.goalTitle;
           // self.formGoalStep = goal.step;
@@ -118,7 +118,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of USER POST
 
       // EDIT USER
-        this.populateForm = function(user){
+        this.populateUserForm = function(user){
           self.formUserId = user._id;
           self.formUserUsername = user.username;
           self.formUserPassword = user.password_hash;

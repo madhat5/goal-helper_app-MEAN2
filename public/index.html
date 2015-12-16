@@ -52,14 +52,14 @@
           <h3 id='register-title' style='text-align: center'>Register</h3>
           <br>
           <label class='register-form-username'>Username/Email</label>
-          <input type='text' placeholder='Username or Email' ng-model=''>
+          <input type='text' placeholder='Username or Email' ng-model='goalController.formUserUsername'>
           <br>
           <br>
           <label class='register-form-password'>Password</label>
-          <input type='text' placeholder='Password' ng-model=''>
+          <input type='text' placeholder='Password' ng-model='goalController.formUserPassword'>
           <br>
           <br>
-          <button id='register-submit' class="btn btn-default">Submit</button>
+          <button id='register-submit' class="btn btn-default" ng-click='goalController.populateUserForm(user)'>Submit</button>
         </div> <!-- end of register-form -->
       </div> <!-- end of landing-page -->
     </div> <!-- end of container -->
@@ -79,7 +79,7 @@
         <br>
         <br>
         <p>Goal.Step (angular)</p>
-        <button id='step-edit' class="btn btn-default" ng-click='goalController.populateForm(goal)'>Edit my goal</button>
+        <button id='step-edit' class="btn btn-default" ng-click='goalController.populateGoalForm(goal)'>Edit my goal</button>
         <br>
         <!-- change delete into completed, and push to an array in user model -->
       </div>
@@ -93,11 +93,4 @@
 
 <!-- ng-show -->
 
-<!--      <div class='post-board' id='post-board'>
-      <div ng-repeat='post in my.posts'>
-        <div class='post-container'>
-          {{post.comment}}<br>
-          @{{post.author}}<br>
-          <br>
-          <button ng-click="my.populateForm(post)">Edit</button>
-          <button ng-click="my.deletePost(post)">Delete</button> -->
+
