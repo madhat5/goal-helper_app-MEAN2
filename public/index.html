@@ -27,10 +27,10 @@
       </div>
     </ul>
 
-    <div class='container-fluid'>
+    <div class='container-fluid' >
       <div id='landing-page' class='row'>
         <!-- WELCOME + LOGIN -->
-        <div class='welcome-banner'>
+        <div class='welcome-banner' ng-if='goalController.login'>
           <div class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
@@ -57,7 +57,7 @@
           </div>
         </div> <!-- end of welcome-banner -->
         <!-- REGISTER -->
-        <div id='register-form' class='col-lg-4'>
+        <div id='register-form' class='col-lg-4' ng-if='goalController.register'>
           <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
           <label for='username' class='register-form-username'>Username or Email</label>
