@@ -240,31 +240,31 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
-- +:
-	-short
+- Remaining/+Features:
+	- CRITICAL
+		- login html
+		- push goal create to user.goal
+		- step crud + save to user
+			 - get all user.goals.steps
+			 - create step + auto display form when creating a goal + push to goal.step
+			 - delete/completed
 		- add submit button for edit goal
+	- SHORT
 		- navbar with goals
 		- goal display:
 			- goal + next step
 		- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
 		- alert when click on my goals (nav bar): if not logged in, "please log in"
 		- modal alert when user created, setTimeout
-	-long
+	- LONG
 		- goal display:
 			- add div lines around goal per number of steps
 		- show navbar on hover
 		- score tracker
 		- color change based on step status
 
-- Remaining:
-	- client side 
-		- user auth
-		- story build
-			- crud goals AND goal.steps
-				- when creating/saving goal, also create/save step then push data to goal.steps
-    - bootstrap/fonts
-    - heroku
-    - extra's
+- Heroku
+
 
 ---
 ---
