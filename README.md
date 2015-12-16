@@ -106,6 +106,8 @@ Models:
 		- step_completed: boolean
 	- goal_completed: boolean
 
+- step
+
 User story: (UPDATE)
 (MOAR MODALS!!!)
 
@@ -238,28 +240,34 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
-- +:
-	- score tracker
-	- color change based on step status
-	- navbar with goals
-	- show navbar on hover
-	- goal display:
-		- goal + next step
-		- add div lines around goal per number of steps
-	- rotate through quotes (hide/show each)
-	- modal alert when user created, setTimeout
-	- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
-	- alert when click on my goals (nav bar): if not logged in, "please log in"
+- Heroku
 
-- Remaining:
-	- client side 
-		- user auth
-		- story build
-			- crud goals AND goal.steps
-				- when creating/saving goal, also create/save step then push data to goal.steps
-    - bootstrap/fonts
-    - heroku
-    - extra's
+- Remaining/+Features:
+	- CRITICAL
+		- show/hide based on user login --x
+		- push goal create to user.goal
+		- step crud + save to user
+			 - get all user.goals.steps
+			 - create step + auto display form when creating a goal + push to goal.step
+			 - delete/completed
+		- add submit button for edit goal
+
+	- SHORT
+		- navbar with goals
+		- goal display:
+			- goal + next step
+		- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
+		- alert when click on my goals (nav bar): if not logged in, "please log in"
+		- modal alert when user created, setTimeout
+	- LONG
+		- goal display:
+			- add div lines around goal per number of steps
+		- show navbar on hover
+		- score tracker
+		- color change based on step status
+
+
+
 
 ---
 ---
@@ -270,15 +278,13 @@ Reference
 
 - Git merging
     - https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d02/INSTRUCTOR/git_solo.md
+	
+- Heroku
+	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d04/INSTRUCTOR/heroku.md
 
 - Embedding/referencing:
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Ba1%5Dmongo.md
 	- https://github.com/ga-students/wdi_lettuce_students/blob/master/w08/d01/INSTRUCTOR/%5Bb1%5Dmongoose_data_modeling.md
-
-- Passport
-	- http://mherman.org/blog/2015/07/02/handling-user-authentication-with-the-mean-stack/#.Vmove-ODGko
-	- strategy:
-		- http://www.codexpedia.com/node-js/node-js-authentication-using-passport-local-strategy/
 
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
@@ -286,10 +292,11 @@ Reference
 - Angular if/else
 	- https://docs.angularjs.org/api/ng/directive/ngSwitch
 	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
-	
+
 - Misc
 	- CSS colors:
 		- https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
+		- http://stackoverflow.com/questions/23201134/transparent-argb-hex-value
 	- Mongo commands:
 		- https://docs.mongodb.org/manual/reference/mongo-shell/
 
@@ -306,8 +313,8 @@ Comments/Notes:
 ---
 Shoutouts:
 
-- Kyle (dragable div)
 - Katie Z (user-auth; bootstrap modal)
+- Kyle (dragable div)
 - Robbie (dynamic searches)
 
 

@@ -5,6 +5,7 @@
 <head>
   <title>Jmny</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Marck+Script|Ribeye|Indie+Flower|Architects+Daughter|Ubuntu' rel='stylesheet' type='text/css'>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
@@ -15,6 +16,7 @@
 <body>
   <div id='background-set' ngmygoals>
 
+    <!-- NAVBAR -->
     <ul class='navbar'>
       <div class='navbar-div'>
         <!-- add a href to each li item -->
@@ -27,14 +29,21 @@
 
     <div class='container-fluid'>
       <div id='landing-page' class='row'>
+        <!-- WELCOME + LOGIN -->
         <div class='welcome-banner'>
           <div class='col-lg-4 col-lg-offset-4'>
             <div class='mini-banner'>
               <h1>Welcome to Jmny!</h1>
-              <h4 class='tagline'>Where we help #(*) of users achieve #{{goalController.totalGoals}} goals.</h4>
+              <h4 class='tagline'>Where we help #{{goalController.totalUsers}} of users achieve #{{goalController.totalGoals}} goals.</h4>
             </div>
             <br>
-            <button id='welcome-login' class="btn btn-default" style='margin: 0 45%'>Login</button>
+              <div id='login-input'>
+                <input id='login-username' type='text' class='validate' placeholder='Username/Email' ng-model='goalController.loginUsername'>
+                <input id='login-password' type='password' placeholder='Password' ng-model='goalController.loginPassword'>
+              </div>
+            <br>
+            <br>
+            <button id='welcome-login' type='submit' class="btn btn-default" style='margin: 0 45%' name='action' ng-click='goalController.loginSubmit()'>Login</button>
             <br>
             <br>
             <div class='welcome-info'>
@@ -47,22 +56,24 @@
             </div>
           </div>
         </div> <!-- end of welcome-banner -->
+        <!-- REGISTER -->
         <div id='register-form' class='col-lg-4'>
-          <h3 id='register-title' style='text-align: center'>Register</h3>
+          <h3 id='register-title' style="text-align: center; font-family: 'Ribeye', cursive;">Register</h3>
           <br>
-          <label class='register-form-username'>Username/Email</label>
-          <input type='text' placeholder='Username or Email' ng-model=''>
-          <br>
-          <br>
-          <label class='register-form-password'>Password</label>
-          <input type='text' placeholder='Password' ng-model=''>
+          <label for='username' class='register-form-username'>Username or Email</label>
+          <input id='register-username' type='text' class='validate' placeholder='Username/Email' ng-model='goalController.registerUsername'>
           <br>
           <br>
-          <button id='register-submit' class="btn btn-default">Submit</button>
+          <label for='password' class='register-form-password'>Password</label>
+          <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='goalController.registerPassword'>
+          <br>
+          <br>
+          <button id='register-submit' type='submit' name='action' class="btn btn-default" ng-click='goalController.registerSubmit()'>Submit</button>
         </div> <!-- end of register-form -->
       </div> <!-- end of landing-page -->
     </div> <!-- end of container -->
 
+    <!-- GOAL CREATE -->
     <div class='create-form'>
       <label>What's your goal?</label>
       <br>
@@ -72,27 +83,21 @@
       <button id='goal-create' class="btn btn-default" ng-click='goalController.addGoal()'>Create a Goal</button>
     </div>
 
-    <div class='goal-holder'>
-      <h3>Goal (angular) </h3>
-      <p>Goal.Step (angular)</p>
-      <button id='step-create' class="btn btn-default">Create a step for your Goal</button>
-      <br>
-      <button id='goal-edit' class="btn btn-default">Edit my goal</button>
-    </div> <!-- end of goal-holder -->
+    <!-- GOAL DISPLAY -->
+    <div class='goal-container' ng-repeat='goal in goalController.goals'>
+      <div class='goal-holder'>
+        {{goal.goalTitle}}
+        <br>
+        <br>
+        <p>Goal.Step (angular)</p>
+        <button id='step-edit' class="btn btn-default" ng-click='goalController.populateGoalForm(goal)'>Edit my goal</button>
+        <br>
+        <!-- change delete into completed, and push to an array in user model -->
+      </div>
+    </div>
 
   </div> <!-- end of ngmygoals -->
 </body>
 </html>
 
-<!-- TEMP -->
 
-<!-- ng-show -->
-
-<!--      <div class='post-board' id='post-board'>
-      <div ng-repeat='post in my.posts'>
-        <div class='post-container'>
-          {{post.comment}}<br>
-          @{{post.author}}<br>
-          <br>
-          <button ng-click="my.populateForm(post)">Edit</button>
-          <button ng-click="my.deletePost(post)">Delete</button> -->

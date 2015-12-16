@@ -14,6 +14,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       self.goals = [];
       self.totalGoals = 0;
 
+      // ALL GOALS
       this.totalGoals = function() {
         return self.goals.length
       };
@@ -31,7 +32,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of GOAL GET
       this.getGoals();
 
-      // CREATE/ADD GOAL, POST
+      // CREATE GOAL, POST
       this.addGoal = function(){
         self.$http.post('/goals', {goalTitle: this.formGoalTitle}).then(function success(res){
           // TEST
@@ -46,7 +47,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of GOAL POST
 
       // EDIT GOAL
-        this.populateForm = function(goal){
+        this.populateGoalForm = function(goal){
           self.formGoalId = goal._id;
           self.formGoalTitle = goal.goalTitle;
           // self.formGoalStep = goal.step;
@@ -84,77 +85,123 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 
     // USER CONTROLLER
     // ================================================
-      self.users = [];
+      // self.users = [];
       self.totalUsers = 0;
+      self.currentUser = [{}];
+      self.register = false;
+      self.login = false;
+      self.home = false;
+      self.loggedIn = false;
 
+      // ALL USERS
       this.totalUsers = function() {
         return self.users.length
       };
 
-      // ALL USERS, GET
-      this.getUsers = function(){
+      // USER, GET
+      this.getUser = function(){
         console.log('Searching for all users...');
-        self.$http.get('/users').then(function(res){
-          // TEST
-          console.log(res);
+        if (Cookies.get('loggedinId') != null){
+          self.$http.get('/users/' + Cookies.get('loggedinId')).then(function success(res){
+            // TEST
+            console.log(res.data);
 
-          self.users = res.data;
-        });
-        return self.users;
+            self.loggedIn = true;
+            self.register = false;
+            self.login = false;
+          })
+        } else {
+          self.loggedIn = false;
+        };
       }; // end of USER GET
-      this.getUsers();
+      this.getUser();
 
-      // CREATE/ADD USER, POST
-      this.addUser = function(){
-        self.$http.post('/users', {username: this.formUserUsername, password_hash: this.formUserPassword}).then(function success(res){
+      // REGISTER USER FORM
+      this.registerForm = function(){
+        self.register = true;
+        self.login = false;
+      };
+
+      // CREATE USER, POST
+      this.registerSubmit = function(){
+        self.$http.post('/users', {username: this.registerUsername, password: this.registerPassword}).then(function success(res){
           // TEST
           console.log(res.data);
 
-          self.users.push(res.data);;
-          self.formUserUsername = '';
-          self.formUserPassword = '';
+          self.registerUsername = '';
+          self.registerPassword = '';
+          self.loggedIn = true;
+          self.register = false;
+          self.login = false;
         }, function error(){
-          console.log("D'OH...CREATE ERROR...")
+          alert("D'OH! Seems like Bart broke it. Please try again...");
         });
-      }; // end of USER POST
+      }; // end of USER REGISTER
 
-      // EDIT USER
-        this.populateForm = function(user){
-          self.formUserId = user._id;
-          self.formUserUsername = user.username;
-          self.formUserPassword = user.password_hash;
-        };
+      // LOGIN USER FORM
+      this.loginForm = function(){
+        self.login = true;
+        self.register = false;
+      };
 
-        this.editUser = function(){
-          var id = this.formUserId;
-          self.$http.put('/users/' + id, {
-            username: this.formUserUsername,
-            password_hash: this.formUserPassword
-          }).then(function success(res){
-            // TEST
-            console.log(res);
-
-            self.getUsers();
-            self.formUserId = '';
-            self.formUserUsername = '';
-            self.formUserPassword = '';
-          }, function error(){
-            console.log("D'OH...EDIT ERROR...")
-          });
-        }; // end of USER PUT
-
-      // DELETE USER
-      this.deleteUser = function(user){
-        var id = user._id;
-        self.$http.delete('/users/' + id).then(function success(res){
+      // LOGIN USER
+      this.loginSubmit = function(){
+        self.$http.post('/login', {username: this.loginUsername, password: this.loginPassword}).then(function success(res){
           // TEST
           console.log(res);
 
-          self.getUsers();
+          self.loggedIn = true;
+          this.loginUsername = '';
+          this.loginPassword = '';
+          self.getUser();
         }, function error(){
-          console.log("D'OH...DELETE ERROR...");
+          alert("D'OH! Seems like the wrong email and/or password. Please try again...");
         });
-      }; // end of USER DELETE
+      }; // end of USER LOGIN
+
+      // LOGOUT USER
+      this.logOut = function(){
+        Cookies.remove('loggedIn');
+        self.getUser
+      };
+
+      // // EDIT USER
+      //   this.populateUserForm = function(user){
+      //     self.formUserId = user._id;
+      //     self.formUserUsername = user.username;
+      //     self.formUserPassword = user.password_hash;
+      //   };
+
+      //   this.editUser = function(){
+      //     var id = this.formUserId;
+      //     self.$http.put('/users/' + id, {
+      //       username: this.formUserUsername,
+      //       password_hash: this.formUserPassword
+      //     }).then(function success(res){
+      //       // TEST
+      //       console.log(res);
+
+      //       self.getUser();
+      //       self.formUserId = '';
+      //       self.formUserUsername = '';
+      //       self.formUserPassword = '';
+      //     }, function error(){
+      //       console.log("D'OH...EDIT ERROR...")
+      //     });
+      //   }; // end of USER PUT
+
+      // // DELETE USER
+      // this.deleteUser = function(user){
+      //   var id = user._id;
+      //   self.$http.delete('/users/' + id).then(function success(res){
+      //     // TEST
+      //     console.log(res);
+
+      //     self.getUser();
+      //   }, function error(){
+      //     console.log("D'OH...DELETE ERROR...");
+      //   });
+      // }; // end of USER DELETE
 
     }] // end of controller
   }; // end of return
@@ -166,4 +213,3 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 
 // TEMP STUFF
 // ====================================================
-
