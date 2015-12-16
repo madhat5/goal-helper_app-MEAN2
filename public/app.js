@@ -33,7 +33,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 
       // CREATE/ADD GOAL, POST
       this.addGoal = function(){
-        self.$http.post('/goals', {title: this.formGoalTitle}).then(function success(res){
+        self.$http.post('/goals', {goalTitle: this.formGoalTitle}).then(function success(res){
           // TEST
           console.log(res.data);
 
@@ -48,14 +48,14 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       // EDIT GOAL
         this.populateForm = function(goal){
           self.formGoalId = goal._id;
-          self.formGoalTitle = goal.title;
+          self.formGoalTitle = goal.goalTitle;
           // self.formGoalStep = goal.step;
         };
 
         this.editGoal = function(){
           var id = this.formGoalId;
           self.$http.put('/goals/' + id, {
-            title: this.formGoalTitle,
+            goalTitle: this.formGoalTitle,
             // steps: this.formGoalStep
           }).then(function success(res){
             // TEST
@@ -166,20 +166,4 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
 
 // TEMP STUFF
 // ====================================================
-
-
-
-
-
-
-    // <div class='create-form'>
-    //   <label>Comment:</label>
-    //   <input type='text' ng-model='my.formPostComment'>
-    //   <label>Author:</label>
-    //   <input type='text' ng-model='my.formPostAuthor'>
-    //   <button class='create-button' id='button-create-post' ng-click='my.addPost()'>Create a Post</button>
-    // </div>
-
-
-
 

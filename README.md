@@ -231,6 +231,7 @@ App Build Steps:
     - public/app.js
     	- angular build
     		- user auth
+    			- build around ngshow (if user true, show all, else (please login))
     		- goal CRUD controller
     		- goal.step CRUD controller
     		- user controller
@@ -247,7 +248,8 @@ App Build Steps:
 		- add div lines around goal per number of steps
 	- rotate through quotes (hide/show each)
 	- modal alert when user created, setTimeout
-	- modal to show goal list from navbar as drop down/ or just navbar dropdown?
+	- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
+	- alert when click on my goals (nav bar): if not logged in, "please log in"
 
 - Remaining:
 	- client side 
