@@ -38,13 +38,12 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
           // TEST
           console.log(res.data);
 
-          self.goals.push(res.data);;
+          self.goals.push(res.data);
           self.formGoalTitle = '';
         }, function error(){
           console.log("D'OH...CREATE ERROR...")
         });
-        // add goal.step ajax call to create?
-      }; // end of GOAL POST
+      }; // end of USER.GOAL POST
 
       // EDIT GOAL
         this.populateGoalForm = function(goal){
