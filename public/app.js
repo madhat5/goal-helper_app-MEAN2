@@ -164,6 +164,7 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       this.logOut = function(){
         Cookies.remove('loggedIn');
         self.getUser;
+        self.loggedIn = false;
         console.log(Cookies);
       };
 
