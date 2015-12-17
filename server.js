@@ -144,7 +144,7 @@ app.get('goals/:id', function(req, res){
 });
 
 // UPDATE
-app.put('/goal/:id', function (req, res){
+app.put('/goals/:id', function (req, res){
   Goal.findOneAndUpdate({
     _id: req.params.id
   }, {
@@ -156,7 +156,10 @@ app.put('/goal/:id', function (req, res){
 });
 
 // DELETE
-app.delete('/goal/:id', function(req, res){
+app.delete('/goals/:id', function(req, res){
+
+  console.log('shits happpning');
+
   Goal.findOneAndRemove({ _id: req.params.id }, function(err){
     if (err){ console.log(err) };
     console.log('...Goal has been deleted...');
