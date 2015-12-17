@@ -301,9 +301,12 @@ Reference
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
 
-- Angular if/else
-	- https://docs.angularjs.org/api/ng/directive/ngSwitch
-	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
+- Angular:
+	 if/else
+		- https://docs.angularjs.org/api/ng/directive/ngSwitch
+		- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
+	- hide/show
+		- https://scotch.io/tutorials/how-to-use-ngshow-and-nghide
 
 - Misc
 	- CSS colors:
