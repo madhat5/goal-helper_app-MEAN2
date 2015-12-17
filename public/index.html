@@ -76,7 +76,7 @@
     </div> <!-- end of container -->
 
     <!-- GOAL CREATE -->
-    <div class='row' ng-show='goalController.loggeddIn'>
+    <div class='row' ng-show='goalController.loggedIn'>
       <div id='goal-create-form' class='col-lg-4 col-lg-offset-5'>
         <label style="font-family: 'Ribeye', cursive;">What's your goal?</label>
         <br>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <!-- GOAL DISPLAY -->
-    <div class='row' ng-show='goalController.loggeddIn'>
+    <div class='row' ng-show='goalController.loggedIn'>
       <div id='goal-container'>
         <div ng-repeat='goal in goalController.goals' class='col-lg-4'>
           <div class='goal-holder'>
