@@ -22,10 +22,10 @@
       <nav class="navbar navbar-default">
         <!-- add a href to each li item -->
         <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Tutorial</a></li>
-        <li class='nav-item'><a href="#" ng-hide='goalController.loggedIn ng-click='goalController.loginSubmit()'>My Goals</a></li>
-        <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Register</a></li>
-        <li class='nav-item'><a href="#" ng-click=''>Login</a></li>
-        <li class='nav-item'><a href="#" ng-show='goalController.loggedIn'ng-click='goalController.logOut()'>Logout</a></li>
+        <li class='nav-item'><a href="#" ng-show='goalController.loggedIn' ng-click='goalController.loginSubmit()'>My Goals</a></li>
+        <li class='nav-item'><a href="#" ng-hide='goalController.loggedIn' ng-click='goalController.loginSubmit()'>Register</a></li>
+        <li class='nav-item'><a href="#" ng-hide='goalController.loggedIn' ng-click=''>Login</a></li>
+        <li class='nav-item'><a href="#" ng-show='goalController.loggedIn' ng-click='goalController.logOut()'>Logout</a></li>
       </nav>
     </ul>
 
@@ -95,7 +95,8 @@
       <div id='goal-container'>
         <div ng-repeat='goal in goalController.goals' class='col-lg-4'>
           <div class='goal-holder'>
-            {{goal.goalTitle}}
+            <!-- {{goal.goalTitle}} -->
+            {{user.goalTitle}}
             <br>
             <br>
             <p>Goal.Step (angular)</p>
