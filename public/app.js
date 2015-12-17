@@ -32,19 +32,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
       }; // end of GOAL GET
       this.getGoals();
 
-      // ALL USER GOALS, GET
-      this.getUserGoals = function(){
-        if (Cookies.get('loggedinId') != null){
-          self.$http.get('/users/' + Cookies.get('loggedinId')).then(function success(res){
-            // TEST
-            console.log(res.data);
-
-            self.users.goals = res.data;
-          });
-        return self.users.goals;
-      }; // end of USER GOAL GET
-      this.getUserGoals();
-
       // CREATE GOAL, POST
       this.addGoal = function(){
         self.$http.post('/goals', {goalTitle: this.formGoalTitle}).then(function success(res){
@@ -56,18 +43,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         }, function error(){
           console.log("D'OH...CREATE ERROR...")
         });
-        // add goal to users?
-        if (Cookies.get('loggedinId') != null){
-          self.$http.post('/users/' + Cookies.get('loggedinId'), {goals: [this.formGoalTitle}]).then(function success(res){
-            // TEST
-            console.log(res.data);
-
-            self.currentUser.push(res.data);
-            self.formGoalTitle = '';
-          }, function error(){
-          console.log("D'OH...CREATE ERROR...")
-          });
-        };
       }; // end of USER.GOAL POST
 
       // EDIT GOAL
