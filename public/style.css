@@ -81,7 +81,7 @@ button {
   border-color: rgba(255, 255, 255, .5);
   border-radius: 5px;
   width: 250px;
-  height: 250px;
+  height: 200px;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(255, 255, 255, .5);
   padding: 2%;
@@ -96,7 +96,7 @@ button {
   border-style: solid;
   border-radius: 5px;
   width: 1000px;
-  height: 300px;
+  min-height: 300px;
   margin-top: 100px;
   margin: 5% auto;
 }
@@ -106,8 +106,8 @@ button {
   border-style: solid;
   border-radius: 5px;
   border-color: CadetBlue;
-  width: 250px;
-  min-height: 225px;
+  width: 200px;
+  min-height: 150px;
   background-color: CadetBlue;
   font-family: 'Ubuntu', sans-serif;
   padding: 4%;
