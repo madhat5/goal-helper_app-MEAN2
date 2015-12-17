@@ -254,9 +254,7 @@ App Build Steps:
 
 - Remaining/+Features:
 	- CRITICAL
-		- show/hide based on user login --x
 		- push goal create to user.goal
-		- logout + navbar (including form modals?)
 		- goal div design
 		- step crud + save to user
 			 - get all user.goals.steps
@@ -266,8 +264,9 @@ App Build Steps:
 	- SHORT
 		- navbar with goals
 		- goal display:
+			- user specific goals
 			- goal + next step
-		- modal to show goal list + associated steps from navbar as drop down/ or just navbar dropdown?
+		- goal list + associated steps from navbar as drop down/ or just navbar dropdown?
 		- alert when click on my goals (nav bar): if not logged in, "please log in"
 		- modal alert when user created, setTimeout
 	- LONG
@@ -302,9 +301,12 @@ Reference
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
 
-- Angular if/else
-	- https://docs.angularjs.org/api/ng/directive/ngSwitch
-	- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
+- Angular:
+	 if/else
+		- https://docs.angularjs.org/api/ng/directive/ngSwitch
+		- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
+	- hide/show
+		- https://scotch.io/tutorials/how-to-use-ngshow-and-nghide
 
 - Misc
 	- CSS colors:
