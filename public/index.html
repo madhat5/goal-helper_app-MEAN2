@@ -22,7 +22,7 @@
       <nav class="navbar navbar-default">
         <!-- add a href to each li item -->
         <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Tutorial</a></li>
-        <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>My Goals</a></li>
+        <li class='nav-item'><a href="#" ng-hide='goalController.loggedIn ng-click='goalController.loginSubmit()'>My Goals</a></li>
         <li class='nav-item'><a href="#" ng-click='goalController.loginSubmit()'>Register</a></li>
         <li class='nav-item'><a href="#" ng-click=''>Login</a></li>
         <li class='nav-item'><a href="#" ng-show='goalController.loggedIn'ng-click='goalController.logOut()'>Logout</a></li>
@@ -81,7 +81,7 @@
     <!-- GOAL CREATE -->
     <div class='row' ng-show='goalController.loggedIn'>
       <div id='goal-create-form' class='col-lg-4 col-lg-offset-5'>
-        <label style="font-family: 'Ribeye', cursive;">What's your goal?</label>
+        <label style="font-family: 'Ribeye', cursive; font-size: 17px;">What's your goal?</label>
         <br>
         <br>
         <input type='text' ng-model='goalController.formGoalTitle'>
