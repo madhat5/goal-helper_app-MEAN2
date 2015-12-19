@@ -320,7 +320,22 @@ Reference
 ---
 Comments/Notes:
 
-- 
+- CHALLENGES
+	- Staying focused (tried different userAuth methods)
+	- reading more documentation
+	- finding typo's like Akira
+
+- + FEATURES
+	- adding goal steps
+	- scoring system
+	- modals
+	- api's (for pictures and/or maps)
+	- styling features
+
+- Win
+	- app
+	- knowing what to do/where to look to make it better
+	- code readibility
 
 ---
 ---
